@@ -24,7 +24,7 @@ for i = 1:length(CATS)
         MeX(ii) = nanmean(D(ix));
         SXE(ii) = nanstd(D(ix));
         if opt.SE == 1
-            SXE(ii) = ZSCORE * (std(D(ix))/sqrt(numel(D(ix))));
+            SXE(ii) = (std(D(ix))/sqrt(numel(D(ix))));
         end
         ii = ii + 1;
 end
