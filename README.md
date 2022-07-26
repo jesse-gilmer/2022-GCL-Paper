@@ -7,5 +7,4 @@ Jesse I. Gilmer, Michael A. Farries, Zachary Kilpatrick, Ioannis Delis, Abigail 
 
 bioRxiv 2022.01.06.475265; doi: https://doi.org/10.1101/2022.01.06.475265
 
-
-## Flowchart for replication
+Contact Jesse Gilmer for technical assistance.
