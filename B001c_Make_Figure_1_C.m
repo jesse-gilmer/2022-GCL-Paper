@@ -49,9 +49,6 @@ options.nTrials = 1000; %Default 1000
 nPts = 300; %Default 1000
 i = 1;
 
-% Project params:
-options.tau = 100;
-
 input = [emg'];
 
 nMF = size(input,1); %Default 50
@@ -107,3 +104,31 @@ colorbar()
 axis tight
 saveas(h,fdir + "/Figure_1_C_lower.emf")
 saveas(h,fdir + "/Figure_1_C_lower.png")
+
+%%
+
+ft = fittype('a*exp(-x/tau) ')
+for i = 1:nMF
+    c = xcorr(input(i,:));  
+    c = c(end/2:end);
+    cl = [1:length(c)];
+    f = fit(cl', c', ft, 'StartPoint',  [c(1) 100]);
+    tau(i) = f.tau;
+end
+
+
+h= figure()
+boxplot(tau)
+text(1.1,mean(tau),"The mean decay tau of EMG is: " + mean(tau))
+text(1.1,mean(tau)-std(tau),"The st. dev of the decay tau of EMG is: " + std(tau))
+xlim([0 4])
+xlabel('EMG')
+ylabel('Decay Taus')
+prettify(gcf)
+saveas(h,fdir + "/Figure_1_Cxx_lower.emf")
+saveas(h,fdir + "/Figure_1_Cxx_lower.png")
+
+disp("The mean decay tau of EMG is: " + mean(tau))
+disp("The st. dev of the decay tau of EMG is: " + std(tau))
+
+save(fdir + "/EMG_tau.mat",'tau')

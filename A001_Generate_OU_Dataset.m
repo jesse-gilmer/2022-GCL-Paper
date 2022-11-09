@@ -49,10 +49,10 @@ for A = [-2:.1:2]
     options.nTrials = 100; %Number of trials to learn over. Default = 1000.
     
     % Set the length of the target function:
-    nPts = 200; %Default 1000
+    nPts = 1000; %Default 1000
     
     % Set the number of independent simulations to run:
-    ntr = 4; % Default = 50.
+    ntr = 50; % Default = 50.
     
     % i is the external itterator.
     i = 1;

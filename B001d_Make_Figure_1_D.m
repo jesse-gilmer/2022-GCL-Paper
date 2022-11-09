@@ -88,3 +88,37 @@ colorbar()
 axis tight
 saveas(h,fdir + "/Figure_1_D_lower.emf")
 saveas(h,fdir + "/Figure_1_D_lower.png")
+ %%
+
+nMF = 5000; %Default 50
+% Project params:
+options.tau = 100;
+input = MakeSignal(nPts,nMF,1,options);
+input = normalize(input','range')';
+
+ft = fittype('a*exp(-x/tau)')
+for i = 1:nMF
+    c = xcorr(input(i,:));  
+    c = c(ceil(end/2):end);
+    cl = [1:length(c)];
+    f = fit(cl', c', ft, 'StartPoint',  [c(1) 100]);
+    fitted = f.a*exp(-cl/f.tau);
+    tau(i) = f.tau;
+end
+
+h = figure()
+boxplot(tau)
+text(1.1,mean(tau),"The mean decay tau of OU is: " + mean(tau))
+text(1.1,mean(tau)-std(tau),"The st. dev of the decay tau of OU is: " + std(tau))
+xlim([0 4])
+xlabel('PN')
+ylabel('Decay Taus')
+prettify(gcf)
+saveas(h,fdir + "/Figure_1_Dxx_lower.emf")
+saveas(h,fdir + "/Figure_1_Dxx_lower.png")
+
+disp("The mean decay tau of OU is: " + mean(tau))
+disp("The st. dev of the decay tau of OU is: " + std(tau))
+
+save(fdir + "/OU_tau.mat",'tau')
+

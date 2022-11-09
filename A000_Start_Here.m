@@ -34,16 +34,45 @@
 
 % Figure 1:
     % A: This is an illustration.
-    % B: Run A001b_Make_Figure_1_B.m
+    % B: Run B001b_Make_Figure_1_B.m
         % This script requires that you have the 'utils' folder from 
         % https://zenodo.org/record/5140528#.YuA103bMJD9
         % on your path, and you'll likely need permission from the Hantman
         % lab as well.
-    % C: Run A001c_Make_Figure_1_C.m
+    % C: Run B001c_Make_Figure_1_C.m
         % This data comes from
         % https://www.nature.com/articles/s41598-018-26780-z
         % You should also seek permission from Ioannis Delis.
-    % C: Run A001c_Make_Figure_1_D.m
+    % D: Run B001d_Make_Figure_1_D.m
  
 % Figure 2:
+    % A-C: Run B002all_Make_Figure_2.m
+
+    
+% Figure 3:
+    % A-B: Run B003ab_Make_Figure_3_AB.m
+    % C: Run B003c_Make_Figure_3_c.m
+    
+% Figure 4:
+    % B-C: run B004bc_Make_Figure_4_BC.m
+    % D-X: run B004bc_Make_Figure_4_D.m
+
+% Figure 5:
+	% ZK waiting...
+
+% Figure 6:
+ 
+% Figure 7:
+    % Run B007all_Make_Figure_7.m
+    
+% Figure 8:
+    % Run B008all_Make_Figure_8.m
+   
+
+
+%% TO DO
+ %: Figure 2? Tau of EMG and PN
+ %: Figure 8? Plot of Kinematics fit by GCL and MF
+ %: Figure ...4? add effect of noise on learning speed
+    
     

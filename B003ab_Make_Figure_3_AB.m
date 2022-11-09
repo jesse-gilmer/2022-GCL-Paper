@@ -1,8 +1,23 @@
+%% HEADER
+
+% B003ab_Make_Figure_3_AB.m
+% From: An emergent temporal basis set robustly supports cerebellar time-series learning
+% Authors: Jesse I. Gilmer, Michael A. Farries, Zachary Kilpatrick, Ioannis Delis, Abigail L. Person
+% 2022, BiorXiv, https://www.biorxiv.org/content/10.1101/2022.01.06.475265v1
+%
+% This script was written by JG.
+% Data used in this script comes from https://zenodo.org/record/5140528#.YuA103bMJD9
+%
+% INPUTS: N/A.
+%
+% OUTPUTS: 3 figure panels to /Figure 3/
+
+
 %% Make Figure 2, updated:
 clear all
 close all
 
-fdir = "Figure 2 Updated"
+fdir = "Figure 3"
 mkdir(fdir)
 
 %% Preprocess:
